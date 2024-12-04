@@ -1,0 +1,56 @@
+---
+import { Picture } from "astro:assets";
+import premiumVectorImage from "assets/dao-archi-logo.jpg";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<main class="grid lg:grid-cols-2 place-items-center md:mt-12 mt-6">
+  <div class="lg:order-1 block lg:ml-24">
+    <Picture
+      src={premiumVectorImage}
+      alt="DAO.archi - Social Governance Platform Logo"
+      widths={[200, 400, 600]}
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+  <div class="w-full">
+    <h1
+      class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-6 lg:mt-0">
+      Cohesive Communication & Collaboration
+    </h1>
+    <p class="text-lg mt-4 text-slate-300">
+      Strengthen connections within your DAO community by providing an engaging
+      social feed, blogs, events, and more. Utilize tokens or NFTs for member
+      authentication and role assignment. Invite new members to collaboratively
+      shape the future of your organization.
+    </p>
+    <p class="text-lg mt-4 text-slate-200">
+      Connect, collaborate, and shape the future <b>together</b> on DAO.archi.
+    </p>
+    <div class="mt-6 flex flex-col md:flex-row gap-3">
+      <Link
+        href="#"
+        href="https://open-social-aragon.ddev.site/"
+        target="_blank"
+        class="flex gap-1 items-center justify-center"
+        rel="noopener">
+        <Icon class="text-white w-5 h-5" name="bx:bxs-rocket" />
+
+        Launch App
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="https://github.com/surjithctly/astroship"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
+        GitHub Repo
+      </Link>
+    </div>
+  </div>
+</main>

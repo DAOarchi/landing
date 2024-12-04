@@ -1,0 +1,168 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  // {
+  //   title: "Launch Your DAO",
+  //   description:
+  //     "Easily create and launch your own Decentralized Autonomous Organization with just a few clicks.",
+  //   icon: "bx:bxs-rocket",
+  // },
+  {
+    title: "Community Feed",
+    description:
+      "Engage with your community through a dynamic feed that supports posts, comments, and interactions.",
+    icon: "bx:bxs-message",
+  },
+  {
+    title: "Collaborative Blogging",
+    description:
+      "Share insights and updates with your DAO through integrated blogging features.",
+    icon: "bx:bxs-pencil",
+  },
+  {
+    title: "Event Management",
+    description:
+      "Organize and manage events to keep your DAO members informed and engaged.",
+    icon: "bx:bxs-calendar",
+  },
+  {
+    title: "Polls and Voting",
+    description:
+      "Guage community sentiment with built-in polls and voting mechanisms.",
+    icon: "bx:bx-poll",
+  },
+  {
+    title: "Comprehensive Notifications",
+    description:
+      "Stay updated with real-time notifications about the latest activities within your DAO.",
+    icon: "bx:bxs-bell",
+  },
+  {
+    title: "Dynamic Discussions",
+    description:
+      "Foster lively discussions with threaded comments and replies.",
+    icon: "bx:bxs-chat",
+  },
+];
+
+const inProgressFeatures = [
+  {
+    title: "Dashboard",
+    badge: true,
+    description:
+      "Used for easy information management and simple DAO intelligence. It’s user-friendly interface provides an at-a-glance overview of key performance indicators relevant to you and your community.",
+    icon: "bx:bxs-chat",
+  },
+  {
+    title: "Resource Library",
+    badge: true,
+    description:
+      "Provides an easily navigable directory of selected content picked by the community managers (i.e. manuals, research papers, and community news).",
+    icon: "bx:bxs-institution",
+  },
+  {
+    title: "Launch New DAO",
+    badge: true,
+    description:
+      "Easily create and launch your own Decentralized Autonomous Organization with just a few clicks without leaving the comfort of DAO.archi.",
+    icon: "bx:bxs-rocket",
+  },
+];
+
+const futureFeatures = [
+  {
+    title: "Real Time Chat",
+    description:
+      "Chat is a convenient feature that allows people to communicate in real-time with one another without interrupting the tasks they are busy with.",
+    icon: "bx:bxs-chat",
+  },
+  {
+    title: "Real Time Video Conference",
+    description:
+      "Connect a live video room to any DAO event. With the start of the event, a link to the meeting room is automatically made available for all enrolled members.",
+    icon: "bx:bxs-chat",
+  },
+  {
+    title: "Real Time Content Collaboration",
+    description:
+      "Allows multiple members to work together on a single document at the same time, make edits, add comments and propose suggestions that can be accepted or rejected.",
+    icon: "bx:bxs-chat",
+  },
+  {
+    title: "Native App",
+    description:
+      "Reach your members whenever they are on the go with a native app and push notifications to keep your community connected.",
+    icon: "bx:bxs-chat",
+  },
+];
+---
+
+<div class="mt-16 md:mt-16">
+  <h2 class="text-3xl lg:text-4xl font-bold lg:tracking-tighter">
+    All the tools you need to make decisions and take action!
+  </h2>
+  <p class="text-lg mt-4 text-slate-200">
+    DAO.archi comes batteries included. It takes the best parts of
+    state-of-the-art DAO frameworks and enhances them with unique social
+    features.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="bg-black rounded-full p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-bold text-xl">{item.title}</h3>{" "}
+          <p class="text-slate-300 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<div class="mt-16 text-2xl font-semibold">In Progress</div>
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    inProgressFeatures.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="bg-black rounded-full p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-bold text-xl" style="display: inline;">
+            {item.title}
+          </h3>{" "}
+          {item.badge && (
+            <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-300 rounded-full">
+              Next Release
+            </span>
+          )}
+          <p class="text-slate-300 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<div class="mt-16 text-2xl font-semibold">Future</div>
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    futureFeatures.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="bg-black rounded-full p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-bold text-xl">{item.title}</h3>{" "}
+          <p class="text-slate-300 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
