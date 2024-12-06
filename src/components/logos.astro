@@ -5,23 +5,42 @@ import { Icon } from "astro-icon/components";
 
 <div class="mt-24">
   <h2 class="text-center text-slate-300">
-    Compatible with your favorite DAO frameworks:
+    Compatible with your favorite DAO framework:
   </h2>
-  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-    <img
-      class="size-16 md:size-20"
-      src="/src/assets/aragonproject_logo.jpeg"
-      alt="Aragon Logo"
-    />
-    <img
-      class="size-20 md:size-28"
-      src="/src/assets/colony_io_logo.jpeg"
-      alt="Colony Logo"
-    />
-    <img
-      class="size-16 md:size-20"
-      src="/src/assets/moloch-logo.gif"
-      alt="Moloch Logo"
-    />
+  <div
+    class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap text-slate-300 text-center">
+    <a href="https://aragon.org/" target="_blank">
+      <figure>
+        <img
+          class="size-16 md:size-20 mx-auto"
+          src="/src/assets/aragonproject_logo.png"
+          alt="Aragon Logo"
+        />
+        <figcaption class="mt-2">Available</figcaption>
+      </figure>
+    </a>
+    <a href="https://colony.io/" target="_blank">
+      <figure>
+        <img
+          class="size-16 md:size-20 mx-auto"
+          src="/src/assets/colony_io_logo.png"
+          alt="Colony Logo"
+        />
+        <figcaption class="mt-2">Coming Soon</figcaption>
+      </figure>
+    </a>
+    <a
+      href="https://daohaus.club/"
+      target="_blank"
+      class="text-center justify-center align-center">
+      <figure>
+        <img
+          class="size-16 md:size-20 mx-auto"
+          src="/src/assets/moloch-logo.png"
+          alt="Moloch Logo"
+        />
+        <figcaption class="mt-2">Coming Soon</figcaption>
+      </figure>
+    </a>
   </div>
 </div>
