@@ -1,6 +1,10 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import aragonLogo from "assets/aragonproject_logo.png";
+import colonyLogo from "assets/colony_io_logo.png";
+import molochLogo from "assets/moloch-logo.png";
+import { Picture } from "astro:assets";
 ---
 
 <div class="mt-24">
@@ -11,9 +15,9 @@ import { Icon } from "astro-icon/components";
     class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap text-slate-300 text-center">
     <a href="https://aragon.org/" target="_blank">
       <figure>
-        <img
+        <Picture
           class="size-16 md:size-20 mx-auto"
-          src="/src/assets/aragonproject_logo.png"
+          src={aragonLogo}
           alt="Aragon Logo"
         />
         <figcaption class="mt-2">Available</figcaption>
@@ -21,9 +25,9 @@ import { Icon } from "astro-icon/components";
     </a>
     <a href="https://colony.io/" target="_blank">
       <figure>
-        <img
+        <Picture
           class="size-16 md:size-20 mx-auto"
-          src="/src/assets/colony_io_logo.png"
+          src={colonyLogo}
           alt="Colony Logo"
         />
         <figcaption class="mt-2">Coming Soon</figcaption>
@@ -34,9 +38,9 @@ import { Icon } from "astro-icon/components";
       target="_blank"
       class="text-center justify-center align-center">
       <figure>
-        <img
+        <Picture
           class="size-16 md:size-20 mx-auto"
-          src="/src/assets/moloch-logo.png"
+          src={molochLogo}
           alt="Moloch Logo"
         />
         <figcaption class="mt-2">Coming Soon</figcaption>
