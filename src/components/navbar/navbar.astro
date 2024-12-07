@@ -29,9 +29,9 @@ const menuitems = [
         title: "Coming Soon",
         path: "/#coming-soon",
         children: [
+          { title: "Launch New DAOs", path: "/#launch-new-daos" },
           { title: "Dashboard", path: "/#dashboard" },
           { title: "Resource Library", path: "/#resource-library" },
-          { title: "Launch New DAOs", path: "/#launch-new-daos" },
         ],
       },
       {
@@ -75,7 +75,7 @@ const menuitems = [
   {
     title: "Use Cases",
     path: "#",
-    children: [{ title: "Coming Soon", path: "/" }],
+    children: [{ title: "Coming Soon", path: "#" }],
   },
   {
     title: "Contact",
@@ -100,12 +100,12 @@ const menuitems = [
           href="/"
           class="text-4xl"
           style="font-family: system-ui; letter-spacing: 2px">
-          <span class="text-slate-200">DAO</span><span
+          <span class="text-slate-100">DAO</span><span
             class="font-semibold text-slate-800">ARCHI</span
           >
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-200" />
+          <MenuIcon class="w-4 h-4 text-gray-100" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
@@ -125,7 +125,7 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-200 hover:text-gray-800">
+                      class="flex lg:px-3 py-2 items-center text-gray-100 hover:text-gray-800">
                       <span> {item.title}</span>
                       {item.badge && (
                         <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">

@@ -20,7 +20,7 @@ publishedBlogEntries.sort(function (a, b) {
   <Container>
     <Sectionhead>
       <Fragment slot="title">Our Blog</Fragment>
-      <Fragment slot="desc">
+      <Fragment slot="desc" class="text-gray-100">
         We write about building DAOs and thoughts going on our mind.
       </Fragment>
     </Sectionhead>
@@ -42,7 +42,7 @@ publishedBlogEntries.sort(function (a, b) {
                     class="w-full rounded-md object-cover object-center bg-white"
                   />
                   <div>
-                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                    <span class="text-blue-200 uppercase tracking-wider text-sm font-medium">
                       {blogPostEntry.data.category}
                     </span>
 
@@ -51,12 +51,12 @@ publishedBlogEntries.sort(function (a, b) {
                     </h2>
 
                     <div class="flex gap-2 mt-3">
-                      <span class="text-gray-400">
+                      <span class="text-gray-100">
                         {blogPostEntry.data.author}
                       </span>
-                      <span class="text-gray-400">• </span>
+                      <span class="text-gray-100">• </span>
                       <time
-                        class="text-gray-400"
+                        class="text-gray-100"
                         datetime={blogPostEntry.data.publishDate.toISOString()}>
                         {blogPostEntry.data.publishDate.toDateString()}
                       </time>

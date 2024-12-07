@@ -73,6 +73,18 @@ const features = [
 
 const inProgressFeatures = [
   {
+    title: "Launch New DAOs",
+    badge: "Coming Soon",
+    description:
+      "Easily create and launch your own Decentralized Autonomous Organization with just a few clicks without leaving the comfort of DAO.archi.",
+    icon: "bx:bxs-rocket",
+    benefits: [
+      "Guided setup",
+      "Template selection",
+      "Governance configuration",
+    ],
+  },
+  {
     title: "Dashboard",
     badge: "Coming Soon",
     description:
@@ -91,18 +103,6 @@ const inProgressFeatures = [
       "Provides an easily navigable directory of selected content picked by the community managers (i.e. manuals, research papers, and community news).",
     icon: "bx:bxs-book-content",
     benefits: ["Organized content", "Search functionality", "Access controls"],
-  },
-  {
-    title: "Launch New DAOs",
-    badge: "Coming Soon",
-    description:
-      "Easily create and launch your own Decentralized Autonomous Organization with just a few clicks without leaving the comfort of DAO.archi.",
-    icon: "bx:bxs-rocket",
-    benefits: [
-      "Guided setup",
-      "Template selection",
-      "Governance configuration",
-    ],
   },
 ];
 
@@ -147,7 +147,7 @@ const futureFeatures = [
       class="text-4xl lg:text-5xl font-bold lg:tracking-tight md:mt-4 text-center font-display">
       Everything You Need
     </h2>
-    <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+    <p class="text-lg mt-4 text-slate-100 text-center [text-wrap:pretty]">
       Powerful tools to help you manage and grow your DAO community
     </p>
   </div>
@@ -161,12 +161,12 @@ const futureFeatures = [
           icon={feature.icon}
           iconPosition={index % 2 === 0 ? "left" : "right"}>
           {feature.benefits.map((benefit) => (
-            <li class="flex items-center gap-3 text-neutral-800">
+            <li class="flex items-center gap-3 ">
               <Icon
                 name="bx:bxs-check-circle"
-                class="min-w-[1.25rem] text-primary-500"
+                class="min-w-[1.25rem] text-neutral-800"
               />
-              <span class="text-sm">{benefit}</span>
+              <span class="text-sm text-neutral-200">{benefit}</span>
             </li>
           ))}
         </FeatureRow>
@@ -174,13 +174,13 @@ const futureFeatures = [
     ))
   }
 
-  <div id="coming-soon" class="mt-24">
+  <div id="coming-soon" class="mt-12">
     <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
       <h2
         class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center font-display">
         Coming Soon
       </h2>
-      <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+      <p class="text-lg mt-4 text-slate-100 text-center [text-wrap:pretty]">
         Exciting new features in development
       </p>
     </div>
@@ -195,12 +195,12 @@ const futureFeatures = [
             iconPosition={index % 2 === 0 ? "left" : "right"}
             badge={feature.badge}>
             {feature.benefits.map((benefit) => (
-              <li class="flex items-center gap-3 text-neutral-800">
+              <li class="flex items-center gap-3">
                 <Icon
                   name="bx:bxs-check-circle"
-                  class="min-w-[1.25rem] text-primary-500"
+                  class="min-w-[1.25rem] text-neutral-800"
                 />
-                <span class="text-sm">{benefit}</span>
+                <span class="text-sm text-neutral-200">{benefit}</span>
               </li>
             ))}
           </FeatureRow>
@@ -209,13 +209,13 @@ const futureFeatures = [
     }
   </div>
 
-  <div id="future-roadmap" class="mt-24">
+  <div id="future-roadmap" class="mt-12">
     <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
       <h2
         class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center font-display">
         Future Roadmap
       </h2>
-      <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+      <p class="text-lg mt-4 text-slate-100 text-center [text-wrap:pretty]">
         Features we're planning to build
       </p>
     </div>
@@ -229,12 +229,12 @@ const futureFeatures = [
             icon={feature.icon}
             iconPosition={index % 2 === 0 ? "left" : "right"}>
             {feature.benefits.map((benefit) => (
-              <li class="flex items-center gap-3 text-neutral-800">
+              <li class="flex items-center gap-3">
                 <Icon
                   name="bx:bxs-check-circle"
-                  class="min-w-[1.25rem] text-primary-500"
+                  class="min-w-[1.25rem] text-neutral-800"
                 />
-                <span class="text-sm">{benefit}</span>
+                <span class="text-sm text-neutral-200">{benefit}</span>
               </li>
             ))}
           </FeatureRow>
