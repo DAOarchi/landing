@@ -5,28 +5,77 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
-  // {
-  //   title: "Features",
-  //   path: "#",
-  //   children: [
-  //     { title: "Action", path: "/" },
-  //     { title: "Another action", path: "#" },
-  //     { title: "Dropdown Submenu", path: "#" },
-  //     { title: "404 Page", path: "/404" },
-  //   ],
-  // },
+  {
+    title: "Features",
+    path: "/#core-features",
+    children: [
+      {
+        title: "Core Features",
+        path: "/#core-features",
+        children: [
+          { title: "Community Feed", path: "/#community-feed" },
+          { title: "Dynamic Discussions", path: "/#dynamic-discussions" },
+          { title: "Direct Messaging", path: "/#direct-messaging" },
+          { title: "Event Management", path: "/#event-management" },
+          { title: "Collaborative Blogging", path: "/#collaborative-blogging" },
+          { title: "Dialogs and Polls", path: "/#dialogs-and-polls" },
+          {
+            title: "Comprehensive Notifications",
+            path: "/#comprehensive-notifications",
+          },
+        ],
+      },
+      {
+        title: "Coming Soon",
+        path: "/#coming-soon",
+        children: [
+          { title: "Dashboard", path: "/#dashboard" },
+          { title: "Resource Library", path: "/#resource-library" },
+          { title: "Launch New DAOs", path: "/#launch-new-daos" },
+        ],
+      },
+      {
+        title: "Future Roadmap",
+        path: "/#future-roadmap",
+        children: [
+          {
+            title: "Real Time Video Conference",
+            path: "/#real-time-video-conference",
+          },
+          {
+            title: "Real Time Content Collaboration",
+            path: "/#real-time-content-collaboration",
+          },
+          { title: "Mobile App", path: "/#mobile-app" },
+        ],
+      },
+    ],
+  },
   // {
   //   title: "Pricing",
   //   path: "/pricing",
   // },
-  {
-    title: "About",
-    path: "/about",
-  },
+  // {
+  //   title: "About",
+  //   path: "/about",
+  // },
+  // {
+  //   title: "Blog",
+  //   path: "/blog",
+  // },
+  // {
+  //   title: "Contact",
+  //   path: "/contact",
+  // },
   {
     title: "Blog",
     badge: true,
     path: "/blog",
+  },
+  {
+    title: "Use Cases",
+    path: "#",
+    children: [{ title: "Coming Soon", path: "/" }],
   },
   {
     title: "Contact",
@@ -56,7 +105,7 @@ const menuitems = [
           >
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="w-4 h-4 text-gray-200" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
@@ -64,28 +113,28 @@ const menuitems = [
           {
             menuitems.map((item, index) => (
               <>
-                {/* {item.children && (
+                {item.children && (
                   <Dropdown
                     title={item.title}
                     children={item.children}
                     lastItem={index === menuitems.length - 1}
                   />
-                )} */}
+                )}
 
-                {/* {!item.children && ( */}
-                <li>
-                  <a
-                    href={item.path}
-                    class="flex lg:px-3 py-2 items-center text-gray-200 hover:text-gray-800">
-                    <span> {item.title}</span>
-                    {item.badge && (
-                      <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
-                        New
-                      </span>
-                    )}
-                  </a>
-                </li>
-                {/* )} */}
+                {!item.children && (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex lg:px-3 py-2 items-center text-gray-200 hover:text-gray-800">
+                      <span> {item.title}</span>
+                      {item.badge && (
+                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                          New
+                        </span>
+                      )}
+                    </a>
+                  </li>
+                )}
               </>
             ))
           }

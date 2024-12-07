@@ -1,0 +1,245 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+import FeatureRow from "./ui/FeatureRow.astro";
+
+const features = [
+  {
+    title: "Community Feed",
+    description:
+      "Engage with your community through a dynamic feed that supports posts, comments, and interactions.",
+    icon: "bx:bxs-news",
+    benefits: [
+      "Real-time activity updates",
+      "Rich media support",
+      "Interactive engagement",
+    ],
+  },
+  {
+    title: "Dynamic Discussions",
+    description:
+      "Foster lively discussions with threaded comments and replies.",
+    icon: "bx:bxs-conversation",
+    benefits: [
+      "Threaded conversations",
+      "Topic organization",
+      "Moderation tools",
+    ],
+  },
+  {
+    title: "Direct Messaging",
+    description:
+      "Enables one-on-one conversations between members, facilitating easy and direct communication.",
+    icon: "bx:bxs-chat",
+    benefits: ["Private conversations", "File sharing", "Message history"],
+  },
+  {
+    title: "Event Management",
+    description:
+      "Organize and manage events to keep your DAO members informed and engaged.",
+    icon: "bx:bxs-calendar-event",
+    benefits: ["Event scheduling", "RSVP management", "Calendar integration"],
+  },
+  {
+    title: "Collaborative Blogging",
+    description:
+      "Share insights and updates with your DAO through integrated blogging features.",
+    icon: "bx:bxs-pencil",
+    benefits: ["Multi-author support", "Rich text editing", "Version control"],
+  },
+  {
+    title: "Dialogs and Polls",
+    description:
+      "Engage your community with dialogs and interactive polls to facilitate discussions and gather feedback.",
+    icon: "bx:bxs-bar-chart-alt-2",
+    benefits: [
+      "Multiple poll types",
+      "Real-time results",
+      "Data visualization",
+    ],
+  },
+  {
+    title: "Comprehensive Notifications",
+    description:
+      "Stay updated with real-time notifications about the latest activities within your DAO.",
+    icon: "bx:bxs-bell-ring",
+    benefits: [
+      "Customizable alerts",
+      "Multi-channel delivery",
+      "Priority settings",
+    ],
+  },
+];
+
+const inProgressFeatures = [
+  {
+    title: "Dashboard",
+    badge: "Coming Soon",
+    description:
+      "Used for easy information management and simple DAO intelligence. It's user-friendly interface provides an at-a-glance overview of key performance indicators relevant to you and your community.",
+    icon: "bx:bxs-dashboard",
+    benefits: [
+      "Customizable widgets",
+      "Real-time analytics",
+      "Performance metrics",
+    ],
+  },
+  {
+    title: "Resource Library",
+    badge: "Coming Soon",
+    description:
+      "Provides an easily navigable directory of selected content picked by the community managers (i.e. manuals, research papers, and community news).",
+    icon: "bx:bxs-book-content",
+    benefits: ["Organized content", "Search functionality", "Access controls"],
+  },
+  {
+    title: "Launch New DAOs",
+    badge: "Coming Soon",
+    description:
+      "Easily create and launch your own Decentralized Autonomous Organization with just a few clicks without leaving the comfort of DAO.archi.",
+    icon: "bx:bxs-rocket",
+    benefits: [
+      "Guided setup",
+      "Template selection",
+      "Governance configuration",
+    ],
+  },
+];
+
+const futureFeatures = [
+  {
+    title: "Real Time Video Conference",
+    description:
+      "Connect a live video room to any DAO event. With the start of the event, a link to the meeting room is automatically made available for all enrolled members.",
+    icon: "bx:bxs-video",
+    benefits: [
+      "Video conferencing",
+      "Screen sharing",
+      "Recording capabilities",
+    ],
+  },
+  {
+    title: "Real Time Content Collaboration",
+    description:
+      "Allows multiple members to work together on a single document at the same time, make edits, add comments and propose suggestions that can be accepted or rejected.",
+    icon: "bx:bxs-group",
+    benefits: [
+      "Real-time collaboration",
+      "Version control",
+      "Commenting and feedback",
+    ],
+  },
+  {
+    title: "Mobile App",
+    description:
+      "Reach your members whenever they are on the go with a native app and push notifications to keep your community connected.",
+    icon: "bx:bxs-mobile",
+    benefits: ["Native app experience", "Push notifications", "Offline access"],
+  },
+];
+---
+
+<div class="max-w-screen-xl mx-auto px-5 mt-32">
+  <div
+    id="core-features"
+    class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+    <h2
+      class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center font-display">
+      Everything You Need
+    </h2>
+    <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+      Powerful tools to help you manage and grow your DAO community
+    </p>
+  </div>
+
+  {
+    features.map((feature, index) => (
+      <div id={feature.title.toLowerCase().replace(/\s+/g, "-")}>
+        <FeatureRow
+          title={feature.title}
+          description={feature.description}
+          icon={feature.icon}
+          iconPosition={index % 2 === 0 ? "left" : "right"}>
+          {feature.benefits.map((benefit) => (
+            <li class="flex items-center gap-3 text-neutral-800">
+              <Icon
+                name="bx:bxs-check-circle"
+                class="min-w-[1.25rem] text-primary-500"
+              />
+              <span class="text-sm">{benefit}</span>
+            </li>
+          ))}
+        </FeatureRow>
+      </div>
+    ))
+  }
+
+  <div id="coming-soon" class="mt-24">
+    <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+      <h2
+        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center font-display">
+        Coming Soon
+      </h2>
+      <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+        Exciting new features in development
+      </p>
+    </div>
+
+    {
+      inProgressFeatures.map((feature, index) => (
+        <div id={feature.title.toLowerCase().replace(/\s+/g, "-")}>
+          <FeatureRow
+            title={feature.title}
+            description={feature.description}
+            icon={feature.icon}
+            iconPosition={index % 2 === 0 ? "left" : "right"}
+            badge={feature.badge}>
+            {feature.benefits.map((benefit) => (
+              <li class="flex items-center gap-3 text-neutral-800">
+                <Icon
+                  name="bx:bxs-check-circle"
+                  class="min-w-[1.25rem] text-primary-500"
+                />
+                <span class="text-sm">{benefit}</span>
+              </li>
+            ))}
+          </FeatureRow>
+        </div>
+      ))
+    }
+  </div>
+
+  <div id="future-roadmap" class="mt-24">
+    <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+      <h2
+        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center font-display">
+        Future Roadmap
+      </h2>
+      <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+        Features we're planning to build
+      </p>
+    </div>
+
+    {
+      futureFeatures.map((feature, index) => (
+        <div id={feature.title.toLowerCase().replace(/\s+/g, "-")}>
+          <FeatureRow
+            title={feature.title}
+            description={feature.description}
+            icon={feature.icon}
+            iconPosition={index % 2 === 0 ? "left" : "right"}>
+            {feature.benefits.map((benefit) => (
+              <li class="flex items-center gap-3 text-neutral-800">
+                <Icon
+                  name="bx:bxs-check-circle"
+                  class="min-w-[1.25rem] text-primary-500"
+                />
+                <span class="text-sm">{benefit}</span>
+              </li>
+            ))}
+          </FeatureRow>
+        </div>
+      ))
+    }
+  </div>
+</div>

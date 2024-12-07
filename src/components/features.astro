@@ -1,49 +1,40 @@
 ---
 // @ts-ignore
-import { Icon } from "astro-icon/components";
+import FeatureSection from "./ui/FeatureSection.astro";
 
 const features = [
-  // {
-  //   title: "Launch Your DAO",
-  //   description:
-  //     "Easily create and launch your own Decentralized Autonomous Organization with just a few clicks.",
-  //   icon: "bx:bxs-rocket",
-  // },
   {
     title: "Community Feed",
     description:
       "Engage with your community through a dynamic feed that supports posts, comments, and interactions.",
     icon: "bx:bxs-news",
+    benefits: [
+      "Real-time activity updates",
+      "Rich media support",
+      "Interactive engagement",
+    ],
   },
   {
     title: "Dynamic Discussions",
     description:
       "Foster lively discussions with threaded comments and replies.",
     icon: "bx:bxs-conversation",
+    benefits: [
+      "Threaded conversations",
+      "Topic organization",
+      "Moderation tools",
+    ],
   },
   {
     title: "Direct Messaging",
     description:
       "Enables one-on-one conversations between members, facilitating easy and direct communication.",
     icon: "bx:bxs-chat",
-  },
-  {
-    title: "Event Management",
-    description:
-      "Organize and manage events to keep your DAO members informed and engaged.",
-    icon: "bx:bxs-calendar-event",
-  },
-  {
-    title: "Collaborative Blogging",
-    description:
-      "Share insights and updates with your DAO through integrated blogging features.",
-    icon: "bx:bxs-pencil",
-  },
-  {
-    title: "Comprehensive Notifications",
-    description:
-      "Stay updated with real-time notifications about the latest activities within your DAO.",
-    icon: "bx:bxs-bell-ring",
+    benefits: [
+      "Private conversations",
+      "File sharing",
+      "Message history",
+    ],
   },
 ];
 
@@ -54,6 +45,11 @@ const inProgressFeatures = [
     description:
       "Used for easy information management and simple DAO intelligence. It’s user-friendly interface provides an at-a-glance overview of key performance indicators relevant to you and your community.",
     icon: "bx:bxs-dashboard",
+    benefits: [
+      "Customizable widgets",
+      "Real-time analytics",
+      "Performance metrics",
+    ],
   },
   {
     title: "Resource Library",
@@ -61,6 +57,11 @@ const inProgressFeatures = [
     description:
       "Provides an easily navigable directory of selected content picked by the community managers (i.e. manuals, research papers, and community news).",
     icon: "bx:bxs-book-content",
+    benefits: [
+      "Organized content",
+      "Search functionality",
+      "Access controls",
+    ],
   },
 
   {
@@ -69,6 +70,11 @@ const inProgressFeatures = [
     description:
       "Engage your community with dialogs and interactive polls to facilitate discussions and gather feedback.",
     icon: "bx:bxs-bar-chart-alt-2",
+    benefits: [
+      "Multiple poll types",
+      "Real-time results",
+      "Data visualization",
+    ],
   },
   {
     title: "Launch New DAO",
@@ -76,6 +82,11 @@ const inProgressFeatures = [
     description:
       "Easily create and launch your own Decentralized Autonomous Organization with just a few clicks without leaving the comfort of DAO.archi.",
     icon: "bx:bxs-rocket",
+    benefits: [
+      "Guided setup",
+      "Template selection",
+      "Governance configuration",
+    ],
   },
 ];
 
@@ -99,72 +110,23 @@ const futureFeatures = [
     icon: "bx:bxs-mobile",
   },
 ];
+
 ---
 
-<div class="mt-16 md:mt-16">
-  <h2 class="text-3xl lg:text-4xl font-bold lg:tracking-tighter">
-    All the tools you need to make decisions and take action!
-  </h2>
-  <p class="text-lg mt-4 text-slate-200">
-    DAO.archi comes batteries included. It takes the best parts of
-    state-of-the-art DAO frameworks and enhances them with unique social
-    features.
-  </p>
-</div>
-
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="bg-black rounded-full p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
-        </div>
-        <div>
-          <h3 class="font-bold text-xl">{item.title}</h3>{" "}
-          <p class="text-slate-300 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
-  }
-</div>
-
-<div class="mt-16 text-2xl font-semibold">In Progress</div>
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    inProgressFeatures.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="bg-black rounded-full p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
-        </div>
-        <div>
-          <h3 class="font-bold text-xl" style="display: inline;">
-            {item.title}
-          </h3>{" "}
-          {item.badge && (
-            <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-300 rounded-full">
-              Next Release
-            </span>
-          )}
-          <p class="text-slate-300 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
-  }
-</div>
-
-<div class="mt-16 text-2xl font-semibold">Future</div>
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    futureFeatures.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="bg-black rounded-full p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
-        </div>
-        <div>
-          <h3 class="font-bold text-xl">{item.title}</h3>{" "}
-          <p class="text-slate-300 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
-  }
+<div class="mt-24">
+  <FeatureSection
+    title="Core Features"
+    subtitle="A preview of what DAO.archi offers"
+    features={features}
+  />
+  <FeatureSection
+    title="In Progress"
+    subtitle="Coming soon to DAO.archi"
+    features={inProgressFeatures}
+  />
+  <FeatureSection
+    title="Future"
+    subtitle="What's next for DAO.archi"
+    features={futureFeatures}
+  />
 </div>
