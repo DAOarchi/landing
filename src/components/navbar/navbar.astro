@@ -84,10 +84,12 @@ const menuitems = [
   {
     title: "Telegram",
     path: "https://t.me/dao_alliance",
+    external: true,
   },
   {
     title: "GitHub",
     path: "https://github.com/DAO-Alliance/open-social-aragon",
+    external: true,
   },
 ];
 ---
@@ -125,7 +127,8 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-100 hover:text-gray-800">
+                      class="flex lg:px-3 py-2 items-center text-gray-100 hover:text-gray-800"
+                      target={item.external ? "_blank" : undefined}>
                       <span> {item.title}</span>
                       {item.badge && (
                         <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
