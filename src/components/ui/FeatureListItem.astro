@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+import type { Feature } from "./types";
+
+interface Props {
+  feature: Feature;
+}
+
+const { feature } = Astro.props;
+---
+
+<div class="flex gap-4 items-start">
+  <div class="bg-black rounded-full p-2 w-8 h-8 shrink-0">
+    <Icon class="text-white" name={feature.icon} />
+  </div>
+  <div>
+    <h3 class="font-bold text-xl">{feature.title}</h3>
+    <p class="text-slate-200 mt-2 leading-relaxed">{feature.description}</p>
+  </div>
+</div>

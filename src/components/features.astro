@@ -30,43 +30,24 @@ const features = [
     description:
       "Enables one-on-one conversations between members, facilitating easy and direct communication.",
     icon: "bx:bxs-chat",
-    benefits: [
-      "Private conversations",
-      "File sharing",
-      "Message history",
-    ],
-  },
-];
-
-const inProgressFeatures = [
-  {
-    title: "Dashboard",
-    badge: true,
-    description:
-      "Used for easy information management and simple DAO intelligence. It’s user-friendly interface provides an at-a-glance overview of key performance indicators relevant to you and your community.",
-    icon: "bx:bxs-dashboard",
-    benefits: [
-      "Customizable widgets",
-      "Real-time analytics",
-      "Performance metrics",
-    ],
+    benefits: ["Private conversations", "File sharing", "Message history"],
   },
   {
-    title: "Resource Library",
-    badge: true,
+    title: "Event Management",
     description:
-      "Provides an easily navigable directory of selected content picked by the community managers (i.e. manuals, research papers, and community news).",
-    icon: "bx:bxs-book-content",
-    benefits: [
-      "Organized content",
-      "Search functionality",
-      "Access controls",
-    ],
+      "Organize and manage events to keep your DAO members informed and engaged.",
+    icon: "bx:bxs-calendar-event",
+    benefits: ["Event scheduling", "RSVP management", "Calendar integration"],
   },
-
+  {
+    title: "Collaborative Blogging",
+    description:
+      "Share insights and updates with your DAO through integrated blogging features.",
+    icon: "bx:bxs-pencil",
+    benefits: ["Multi-author support", "Rich text editing", "Version control"],
+  },
   {
     title: "Dialogs and Polls",
-    badge: true,
     description:
       "Engage your community with dialogs and interactive polls to facilitate discussions and gather feedback.",
     icon: "bx:bxs-bar-chart-alt-2",
@@ -77,8 +58,22 @@ const inProgressFeatures = [
     ],
   },
   {
-    title: "Launch New DAO",
-    badge: true,
+    title: "Comprehensive Notifications",
+    description:
+      "Stay updated with real-time notifications about the latest activities within your DAO.",
+    icon: "bx:bxs-bell-ring",
+    benefits: [
+      "Customizable alerts",
+      "Multi-channel delivery",
+      "Priority settings",
+    ],
+  },
+];
+
+const inProgressFeatures = [
+  {
+    title: "Launch New DAOs",
+    badge: "Coming Soon",
     description:
       "Easily create and launch your own Decentralized Autonomous Organization with just a few clicks without leaving the comfort of DAO.archi.",
     icon: "bx:bxs-rocket",
@@ -88,6 +83,26 @@ const inProgressFeatures = [
       "Governance configuration",
     ],
   },
+  {
+    title: "Dashboard",
+    badge: "Coming Soon",
+    description:
+      "Used for easy information management and simple DAO intelligence. It's user-friendly interface provides an at-a-glance overview of key performance indicators relevant to you and your community.",
+    icon: "bx:bxs-dashboard",
+    benefits: [
+      "Customizable widgets",
+      "Real-time analytics",
+      "Performance metrics",
+    ],
+  },
+  {
+    title: "Resource Library",
+    badge: "Coming Soon",
+    description:
+      "Provides an easily navigable directory of selected content picked by the community managers (i.e. manuals, research papers, and community news).",
+    icon: "bx:bxs-book-content",
+    benefits: ["Organized content", "Search functionality", "Access controls"],
+  },
 ];
 
 const futureFeatures = [
@@ -96,21 +111,31 @@ const futureFeatures = [
     description:
       "Connect a live video room to any DAO event. With the start of the event, a link to the meeting room is automatically made available for all enrolled members.",
     icon: "bx:bxs-video",
+    benefits: [
+      "Video conferencing",
+      "Screen sharing",
+      "Recording capabilities",
+    ],
   },
   {
     title: "Real Time Content Collaboration",
     description:
       "Allows multiple members to work together on a single document at the same time, make edits, add comments and propose suggestions that can be accepted or rejected.",
     icon: "bx:bxs-group",
+    benefits: [
+      "Real-time collaboration",
+      "Version control",
+      "Commenting and feedback",
+    ],
   },
   {
     title: "Mobile App",
     description:
       "Reach your members whenever they are on the go with a native app and push notifications to keep your community connected.",
     icon: "bx:bxs-mobile",
+    benefits: ["Native app experience", "Push notifications", "Offline access"],
   },
 ];
-
 ---
 
 <div class="mt-24">
