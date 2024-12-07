@@ -1,0 +1,167 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
+
+interface Feature {
+  title: string;
+  description: string;
+  icon: string;
+  badge?: boolean;
+  benefits?: string[];
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  features: Feature[];
+  image?: ImageMetadata;
+  imageAlt?: string;
+  imagePosition?: "left" | "right";
+}
+
+const {
+  title,
+  subtitle,
+  features,
+  image,
+  imageAlt = "",
+  imagePosition = "left",
+} = Astro.props;
+
+console.log("Features:", features);
+features.forEach((feature) => {
+  console.log("Feature:", feature.title);
+  console.log("Benefits:", feature.benefits);
+});
+---
+
+<div class="max-w-screen-xl mx-auto px-5">
+  {
+    (title || subtitle) && (
+      <div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
+        {title && (
+          <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-4 text-center font-display">
+            {title}
+          </h2>
+        )}
+        {subtitle && (
+          <p class="text-lg mt-4 text-slate-600 text-center [text-wrap:pretty]">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    )
+  }
+
+  {
+    image ? (
+      <div class="grid md:grid-cols-2 py-10">
+        {imagePosition === "left" ? (
+          <>
+            {image && <Picture src={image} alt={imageAlt} />}
+            <div class="grid place-items-center">
+              <div class="max-w-lg">
+                <ul class="grid mt-6 text-left gap-y-4">
+                  {features.map((item) => (
+                    <li class="flex items-center gap-3 text-neutral-800">
+                      <Icon
+                        name={item.icon}
+                        class="min-w-[1.25rem] text-primary-500"
+                      />
+                      <div>
+                        <div class="flex items-center gap-2">
+                          <span class="font-medium">{item.title}</span>
+                          {item.badge && (
+                            <span class="bg-primary-100 border-primary-200 border text-primary-500 rounded-full text-xs font-medium px-3 py-1">
+                              Coming Soon
+                            </span>
+                          )}
+                        </div>
+                        <p class="text-sm text-slate-600">{item.description}</p>
+                        <div>
+                          <ul class="list-disc pl-5 text-sm text-slate-600">
+                            {item.benefits &&
+                              item.benefits.map((benefit) => (
+                                <li>{benefit}</li>
+                              ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div class="grid place-items-center">
+              <div class="max-w-lg">
+                <ul class="grid mt-6 text-left gap-y-4">
+                  {features.map((item) => (
+                    <li class="flex items-center gap-3 text-neutral-800">
+                      <Icon
+                        name={item.icon}
+                        class="min-w-[1.25rem] text-primary-500"
+                      />
+                      <div>
+                        <div class="flex items-center gap-2">
+                          <span class="font-medium">{item.title}</span>
+                          {item.badge && (
+                            <span class="bg-primary-100 border-primary-200 border text-primary-500 rounded-full text-xs font-medium px-3 py-1">
+                              Coming Soon
+                            </span>
+                          )}
+                        </div>
+                        <p class="text-sm text-slate-600">{item.description}</p>
+                        <div>
+                          <ul class="list-disc pl-5 text-sm text-slate-600">
+                            {item.benefits &&
+                              item.benefits.map((benefit) => (
+                                <li>{benefit}</li>
+                              ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            {image && <Picture src={image} alt={imageAlt} class="md:order-2" />}
+          </>
+        )}
+      </div>
+    ) : (
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+        {features.map((item) => (
+          <div class="flex gap-4 items-start">
+            <div class="mt-1 bg-primary-500 rounded-full p-2 w-8 h-8 shrink-0">
+              <Icon name={item.icon} class="text-white" />
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="font-semibold text-lg">{item.title}</h3>
+                {item.badge && (
+                  <span class="bg-primary-100 border-primary-200 border text-primary-500 rounded-full text-xs font-medium px-3 py-1">
+                    Coming Soon
+                  </span>
+                )}
+              </div>
+              <p class="text-slate-500 mt-2 leading-relaxed">
+                {item.description}
+              </p>
+              <div>
+                <ul class="list-disc pl-5 text-sm text-slate-600">
+                  {item.benefits &&
+                    item.benefits.map((benefit) => <li>{benefit}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+</div>
