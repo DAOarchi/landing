@@ -13,67 +13,29 @@ interface Props {
 const { title, description, icon, iconPosition = "left", badge } = Astro.props;
 ---
 
-<div
-  class={[
-    "grid md:grid-cols-2 py-16 md:py-24",
-    iconPosition === "left" ? "md:grid-cols-2" : "md:grid-cols-2",
-    "space-y-8"
-  ]}>
-  {
-    iconPosition === "left" ? (
-      <>
-        <div class="grid place-items-center">
-          <div class="bg-primary-100/50 rounded-full p-16 transition-all duration-300 hover:bg-primary-100 hover:scale-105 hover:shadow-lg group">
-            <Icon
-              name={icon}
-              class="w-24 h-24 text-primary-500 transition-transform duration-300 group-hover:scale-110"
-            />
-          </div>
-        </div>
-        <div class="grid place-items-center">
-          <div class="max-w-lg">
-            {badge && (
-              <span class="bg-primary-100 border-primary-200 border text-primary-500 -ml-px rounded-full text-xs font-medium px-3 py-1">
-                {badge}
-              </span>
-            )}
-            <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
-              {title}
-            </h3>
-            <p class="mt-4 text-slate-600 [text-wrap:balance]">{description}</p>
-            <ul class="grid mt-6 text-left gap-y-4">
-              <slot />
-            </ul>
-          </div>
-        </div>
-      </>
-    ) : (
-      <>
-        <div class="grid place-items-center">
-          <div class="max-w-lg">
-            {badge && (
-              <span class="bg-primary-100 border-primary-200 border text-primary-500 -ml-px rounded-full text-xs font-medium px-3 py-1">
-                {badge}
-              </span>
-            )}
-            <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
-              {title}
-            </h3>
-            <p class="mt-4 text-slate-600 [text-wrap:balance]">{description}</p>
-            <ul class="grid mt-6 text-left gap-y-4">
-              <slot />
-            </ul>
-          </div>
-        </div>
-        <div class="grid place-items-center">
-          <div class="bg-primary-100/50 rounded-full p-16 transition-all duration-300 hover:bg-primary-100 hover:scale-105 hover:shadow-lg group">
-            <Icon
-              name={icon}
-              class="w-24 h-24 text-primary-500 transition-transform duration-300 group-hover:scale-110"
-            />
-          </div>
-        </div>
-      </>
-    )
-  }
+<div class="grid md:grid-cols-2 py-16 md:py-24 md:grid-cols-2 space-y-8">
+  <div class={`grid place-items-center ${iconPosition === 'left' ? 'order-1' : 'order-2'}`}>
+    <div class="bg-primary-100/50 rounded-full p-16 transition-all duration-300 hover:bg-primary-100 hover:scale-105 hover:shadow-lg group">
+      <Icon
+        name={icon}
+        class="w-24 h-24 text-primary-500 transition-transform duration-300 group-hover:scale-110"
+      />
+    </div>
+  </div>
+  <div class={`grid place-items-center ${iconPosition === 'left' ? 'order-2' : 'order-1'}`}>
+    <div class="max-w-lg">
+      {badge && (
+        <span class="bg-primary-100 border-primary-200 border text-primary-500 -ml-px rounded-full text-xs font-medium px-3 py-1">
+          {badge}
+        </span>
+      )}
+      <h3 class="text-2xl font-medium mt-4 [text-wrap:balance]">
+        {title}
+      </h3>
+      <p class="mt-4 text-slate-600 [text-wrap:balance]">{description}</p>
+      <ul class="grid mt-6 text-left gap-y-4">
+        <slot />
+      </ul>
+    </div>
+  </div>
 </div>
