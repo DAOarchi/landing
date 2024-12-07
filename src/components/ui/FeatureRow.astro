@@ -1,6 +1,8 @@
 ---
 // @ts-ignore
 import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
+import placeholderImage from "@assets/direct-message-conversation.png";
 
 interface Props {
   title: string;
@@ -8,9 +10,17 @@ interface Props {
   icon: string;
   iconPosition?: "left" | "right";
   badge?: string;
+  image?: string;
 }
 
-const { title, description, icon, iconPosition = "left", badge } = Astro.props;
+const {
+  title,
+  description,
+  icon,
+  iconPosition = "left",
+  badge,
+  image,
+} = Astro.props;
 ---
 
 <div class="grid md:grid-cols-2 md:py-24 md:grid-cols-2">
@@ -18,10 +28,16 @@ const { title, description, icon, iconPosition = "left", badge } = Astro.props;
     class={`grid place-items-center ${iconPosition === "left" ? "order-1" : "md:order-2"}`}>
     <div
       class="bg-primary-100/50 rounded-full p-16 transition-all duration-300 hover:bg-primary-100 hover:scale-105 hover:shadow-lg group">
-      <Icon
-        name={icon}
-        class="w-24 h-24 text-gray-900 transition-transform duration-300 group-hover:scale-110"
-      />
+      <!-- {image && <img src={image} alt="Feature Image" />}
+      {
+        !image && icon && (
+          <Icon
+            name={icon}
+            class="w-24 h-24 text-gray-900 transition-transform duration-300 group-hover:scale-110"
+          />
+        )
+      } -->
+      <Picture src={placeholderImage} alt="Feature Image" />
     </div>
   </div>
   <div

@@ -32,6 +32,7 @@ const features = [
       "Enables one-on-one conversations between members, facilitating easy and direct communication.",
     icon: "bx:bxs-chat",
     benefits: ["Private conversations", "File sharing", "Message history"],
+    image: "src/assets/direct-message-conversation.png",
   },
   {
     title: "Event Management",
@@ -159,7 +160,8 @@ const futureFeatures = [
           title={feature.title}
           description={feature.description}
           icon={feature.icon}
-          iconPosition={index % 2 === 0 ? "left" : "right"}>
+          iconPosition={index % 2 === 0 ? "left" : "right"}
+          image={feature.image}>
           {feature.benefits.map((benefit) => (
             <li class="flex items-center gap-3 ">
               <Icon

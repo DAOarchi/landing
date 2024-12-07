@@ -15,6 +15,13 @@ const { feature } = Astro.props;
   </div>
   <div>
     <h3 class="font-bold text-xl">{feature.title}</h3>
+    {
+      feature.badge && (
+        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-300 rounded-full">
+          {feature.badge}
+        </span>
+      )
+    }
     <p class="text-slate-200 mt-2 leading-relaxed">{feature.description}</p>
   </div>
 </div>
