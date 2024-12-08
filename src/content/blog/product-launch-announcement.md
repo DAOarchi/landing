@@ -5,7 +5,7 @@ date: "2024-11-11"
 author: "DAO.archi Team"
 description: "Discover how DAO.archi is revolutionizing social networking for DAOs with its innovative features and seamless integration."
 snippet: "Discover how DAO.archi is revolutionizing social networking for DAOs with its innovative features."
-image: { src: "@assets/dao-archi-logo.jpg", alt: "DAO.archi Logo" }
+image: { src: "/src/assets/dao-archi-logo.jpg", alt: "DAO.archi Logo" }
 publishDate: "2024-11-11"
 category: "Announcement"
 tags: ["DAO", "Launch", "Social Networking"]
