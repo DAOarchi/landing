@@ -1,54 +1,54 @@
 ---
-import { Picture } from "astro:assets";
-import daoarchiLogo from "assets/dao-archi-logo.png";
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon/components";
+import { Picture } from 'astro:assets';
+import daoarchiLogo from 'assets/dao-archi-logo.png';
+import Link from '@components/ui/link.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
-<main class="grid lg:grid-cols-2 place-items-center md:mt-12 mt-6">
-  <div class="lg:order-1 block lg:ml-24">
+<main class='grid lg:grid-cols-2 place-items-center md:mt-12 mt-6'>
+  <div class='lg:order-1 block lg:ml-24'>
     <Picture
       src={daoarchiLogo}
-      alt="DAO.archi - Social Governance Platform Logo"
+      alt='DAO.archi - Social Governance Platform Logo'
       widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
+      sizes='(max-width: 800px) 100vw, 620px'
+      loading='eager'
+      format='avif'
     />
   </div>
-  <div class="w-full">
+  <div class='w-full'>
     <h1
-      class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-6 lg:mt-0">
+      class='text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mt-6 lg:mt-0'>
       Cohesive DAO Communication & Collaboration
     </h1>
-    <p class="text-lg mt-4 text-slate-100">
+    <p class='text-lg mt-4 text-slate-100'>
       Enhance connectivity within and across DAO communities by offering an
       engaging social feed, blogs, events, and more. Leverage tokens or NFTs for
       member authentication and role assignment. Facilitate the discovery of new
       communities and streamline collaborator recruitment and onboarding.
     </p>
-    <p class="text-lg mt-4 text-slate-100">
+    <p class='text-lg mt-4 text-slate-100'>
       Connect, collaborate, and shape the future <b>together</b> with DAO.archi.
     </p>
-    <div class="mt-6 flex flex-col md:flex-row gap-3">
+    <div class='mt-6 flex flex-col md:flex-row gap-3'>
       <Link
-        href="#"
-        href="https://open-social-aragon.ddev.site/"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-rocket" />
+        href='#'
+        href='https://open-social-aragon.ddev.site/'
+        target='_blank'
+        class='flex gap-1 items-center justify-center'
+        rel='noopener'>
+        <Icon class='text-white w-5 h-5' name='bx:bxs-rocket' />
 
         Launch App
       </Link>
       <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
+        size='lg'
+        style='outline'
+        rel='noopener'
+        href='https://github.com/DAOarchi/app'
+        class='flex gap-1 items-center justify-center'
+        target='_blank'>
+        <Icon class='text-black w-4 h-4' name='bx:bxl-github' />
         GitHub Repo
       </Link>
     </div>
